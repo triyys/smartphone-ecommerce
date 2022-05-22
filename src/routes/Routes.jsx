@@ -1,22 +1,24 @@
 import React from "react";
 
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
 import Catalog from "../pages/Catalog";
 import Cart from "../pages/Cart";
 import Product from "../pages/Product";
 
-const Routes = () => {
+const MyRoutes = () => {
   return (
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/catalog/:slug" component={Product} />
-      <Route path="/catalog" component={Catalog} />
-      {/* <Route path="/cart" component={Cart} /> */}
-      <Route path="/cart/:params?" component={Cart} />
-    </Switch>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/catalog/:slug" element={<Product/>} />
+        <Route path="/catalog" element={<Catalog/>} />
+        {/* <Route path="/cart" element={<Cart/>} /> */}
+        <Route path="/cart/:params?" element={<Cart/>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
-export default Routes;
+export default MyRoutes;

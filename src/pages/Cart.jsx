@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -18,14 +18,14 @@ const Cart = (props) => {
   const totalPrice = useSelector((state) => state.cartItems.totalPrice);
   const dispatch = useDispatch();
 
-  let history = useHistory();
+  let navigate = useNavigate();
   // useEffect(() => {
   //   if (
   //     props.location.search.includes("resultCode=0") ||
   //     props.location.search.includes("resultCode=0")
   //   ) {
   //     dispatch(removeItem());
-  //     history.push("/");
+  //     navigate.push("/");
   //   }
   // }, []);
 

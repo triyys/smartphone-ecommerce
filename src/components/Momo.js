@@ -1,4 +1,9 @@
 //parameters
+//puts raw signature
+// console.log("--------------------RAW SIGNATURE----------------");
+// console.log(rawSignature);
+//signature
+// import { createHmac } from 'crypto';
 var partnerCode = "MOMO5VLY20220317";
 var accessKey = "CVdikSXjCHoojz2Z";
 var secretkey = "CtulWb0WensOBJLKhUVI9KdftfX4eBqk";
@@ -34,20 +39,16 @@ var rawSignature =
   requestId +
   "&requestType=" +
   requestType;
-//puts raw signature
-// console.log("--------------------RAW SIGNATURE----------------");
-// console.log(rawSignature);
-//signature
-const crypto = require("crypto");
-var signature = crypto
-  .createHmac("sha256", secretkey)
-  .update(rawSignature)
-  .digest("hex");
+
+// const signature = createHmac('sha256', secretkey)
+//   .update(rawSignature)
+//   .digest('hex');
+const signature = '';
 // console.log("--------------------SIGNATURE----------------");
 // console.log(signature);
 
 //json object send to MoMo endpoint
-const requestBody = JSON.stringify({
+export const requestBody = JSON.stringify({
   partnerCode: partnerCode,
   accessKey: accessKey,
   requestId: requestId,
@@ -63,11 +64,9 @@ const requestBody = JSON.stringify({
 });
 
 //Create the HTTPS objects
-const headers = {
+export const headers = {
   "Content-Type": "application/json",
   "X-Requested-With": "XMLHttpRequest",
   "Access-Control-Allow-Origin": "*",
-  "Content-Length": Buffer.byteLength(requestBody),
+  // "Content-Length": Buffer.byteLength(requestBody),
 };
-
-module.exports = { requestBody, headers };
