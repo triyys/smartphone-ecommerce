@@ -1,11 +1,12 @@
-import firebase from '../../configs/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../configs/firebase';
 import PolicyModel from '../models/PolicyModel';
 
 export default class PolicyController {
     static async getPolicyList() {
         try {
             const allPolicies = [];
-            const policyQuerySnapshot = await firebase.firestore().collection('policies').get();
+            const policyQuerySnapshot = await getDocs(collection(db, 'policies'));
 
             policyQuerySnapshot.docs.forEach((policy) => {
                 allPolicies.push(new PolicyModel(

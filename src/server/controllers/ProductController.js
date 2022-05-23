@@ -1,11 +1,12 @@
-import firebase from '../../configs/firebase';
+import { db } from '../../configs/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import ProductModel from '../models/ProductModel';
 
 export default class ProductController {
     static async getProductList() {
         try {
             const allProducts = [];
-            const productQuerySnapshot = await firebase.firestore().collection('products').get();
+            const productQuerySnapshot = await getDocs(collection(db, 'products'));
 
             productQuerySnapshot.docs.forEach((product) => {
                 allProducts.push(new ProductModel(

@@ -25,6 +25,7 @@ const Home = () => {
   }, []);
 
   const [policies, setPolicies] = useState([]);
+  console.log(productList);
 
   return (
     <Helmet title="Trang chủ">

@@ -1,17 +1,15 @@
-import React from "react";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "../pages/Home";
+import HomeRoute from "./HomeRoute";
 import Catalog from "../pages/Catalog";
 import Cart from "../pages/Cart";
 import Product from "../pages/Product";
 
-const MyRoutes = () => {
+const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<HomeRoute/>} />
         <Route path="/catalog/:slug" element={<Product/>} />
         <Route path="/catalog" element={<Catalog/>} />
         {/* <Route path="/cart" element={<Cart/>} /> */}
@@ -21,4 +19,4 @@ const MyRoutes = () => {
   );
 };
 
-export default MyRoutes;
+export default Router;
