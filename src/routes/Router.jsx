@@ -1,19 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomeRoute from "./HomeRoute";
-import Catalog from "../pages/Catalog";
-import Cart from "../pages/Cart";
-import Product from "../pages/Product";
+import ProductRoute from "./ProductRoute";
+import CatalogRoute from "./CatalogRoute";
+import CartRoute from "./CartRoute";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeRoute/>} />
-        <Route path="/catalog/:slug" element={<Product/>} />
-        <Route path="/catalog" element={<Catalog/>} />
-        {/* <Route path="/cart" element={<Cart/>} /> */}
-        <Route path="/cart/:params?" element={<Cart/>} />
+        <Route path="/catalog/:slug" element={<ProductRoute/>} />
+        <Route path="/catalog" element={<CatalogRoute/>} />
+        <Route path="/cart/:params?" element={<CartRoute/>} />
       </Routes>
     </BrowserRouter>
   );

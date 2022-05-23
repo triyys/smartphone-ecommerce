@@ -12,7 +12,7 @@ const MainLayout = ({ children }) => {
                 </div>
             </div>
             <Footer />
-            <ProductViewModal />
+            {/* <ProductViewModal /> */}
         </div>
     )
 }

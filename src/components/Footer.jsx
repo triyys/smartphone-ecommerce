@@ -71,7 +71,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <div className="footer__title">
-                            Về Yolo
+                            Về Triyys
                         </div>
                         <div className="footer__content">
                             {
@@ -108,7 +108,7 @@ const Footer = () => {
                             </Link>
                         </p>
                         <p>
-                            Hướng đến mục tiêu mang lại niềm vui ăn mặc mới mỗi ngày cho hàng triệu người tiêu dùng Việt. Hãy cùng Yolo hướng đến một cuộc sống năng động, tích cực hơn.
+                            Hướng đến mục tiêu mang lại niềm vui ăn mặc mới mỗi ngày cho hàng triệu người tiêu dùng Việt. Hãy cùng Triyys hướng đến một cuộc sống năng động, tích cực hơn.
                         </p>
                     </div>
                 </Grid>

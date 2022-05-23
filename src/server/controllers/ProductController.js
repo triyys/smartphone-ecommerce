@@ -1,5 +1,5 @@
 import { db } from '../../configs/firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import ProductModel from '../models/ProductModel';
 
 export default class ProductController {
@@ -26,6 +26,31 @@ export default class ProductController {
             return null;
         }
     }
+
+    static async getProductById(id) {
+        try {
+            const productQuerySnapshot = await getDoc(doc(db, 'products', id));
+            
+            if (productQuerySnapshot.data()) {
+                const result = new ProductModel(
+                    productQuerySnapshot.get('title'),
+                    productQuerySnapshot.get('description'),
+                    Number(productQuerySnapshot.get('price')),
+                    productQuerySnapshot.get('images'),
+                    productQuerySnapshot.get('category'),
+                    productQuerySnapshot.get('brand'),
+                    id,
+                    productQuerySnapshot.get('tech_info'),
+                );
+                return result;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            return null;
+        }
+    }
+    
     static getProducts = (count, products) => {
         const max = products.length - count
         const min = 0

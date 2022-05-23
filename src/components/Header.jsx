@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import logo from "../assets/images/Logo-2.png";
-
 const mainNav = [
   {
     display: "Trang chủ",
@@ -76,7 +74,7 @@ const Header = () => {
             ))}
           </div>
           <div className="header__menu__center">
-            URANUS
+            TRIYYS
           </div>
           <div className="header__menu__right">
             <div className="header__menu__item header__menu__right__item">
