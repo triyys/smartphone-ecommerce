@@ -1,11 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import productModalReducer from "./product-modal/productModalSlice";
-
-import cartItemsReducer from "./shopping-cart/cartItemsSlide";
-
 import {
-  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
@@ -15,12 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
-import { combineReducers } from "redux";
-
-const reducers = combineReducers({
-  productModal: productModalReducer,
-  cartItems: cartItemsReducer,
-});
+import rootReducer from "./reducers/rootReducer";
 
 const persistConfig = {
   key: "root",
@@ -28,7 +18,7 @@ const persistConfig = {
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
