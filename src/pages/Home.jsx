@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { PUBLIC_ROUTE } from "../constants/paths";
 import Helmet from "../components/Helmet";
 import HeroSlider from "../components/HeroSlider";
 import Section, { SectionTitle, SectionBody } from "../components/Section";
@@ -109,7 +110,7 @@ const Home = () => {
             {/* banner */}
             <Section>
                 <SectionBody>
-                    <Link to="/catalog">
+                    <Link to={PUBLIC_ROUTE.CATALOG}>
                         <img src={banner} alt="" />
                     </Link>
                 </SectionBody>

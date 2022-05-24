@@ -8,9 +8,12 @@ import { remove } from "../../redux/product-modal/productModalSlice";
 
 import Button from "../Button";
 import numberWithCommas from "../../utils/numberWithCommas";
+import { PRIVATE_ROUTE } from "../../constants/paths";
+import { useNavigate } from "react-router-dom";
 
 const ProductView = (props) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     let product = props.product;
 
     if (product === undefined) {
@@ -78,17 +81,12 @@ const ProductView = (props) => {
         };
         if (dispatch(addItem(newItem))) {
             dispatch(remove());
-            props.history.push("/cart");
+            navigate(PRIVATE_ROUTE.CART);
         } else {
             alert("Fail");
         }
     };
-    const styletable = {
-        width: 100,
-    };
-    const stylecolleft = {
-        width: 30,
-    };
+    
     return (
         <div className="product">
             <div className="product__images">

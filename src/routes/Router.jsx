@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { PUBLIC_ROUTE, PRIVATE_ROUTE } from "../constants/paths";
 import HomeRoute from "./HomeRoute";
 import ProductRoute from "./ProductRoute";
 import CatalogRoute from "./CatalogRoute";
@@ -9,10 +10,10 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomeRoute/>} />
-        <Route path="/catalog/:slug" element={<ProductRoute/>} />
-        <Route path="/catalog" element={<CatalogRoute/>} />
-        <Route path="/cart/:params?" element={<CartRoute/>} />
+        <Route path={PUBLIC_ROUTE.HOME} element={<HomeRoute/>} />
+        <Route path={`${PUBLIC_ROUTE.CATALOG}:slug`} element={<ProductRoute/>} />
+        <Route path={PUBLIC_ROUTE.CATALOG} element={<CatalogRoute/>} />
+        <Route path={PRIVATE_ROUTE.CART} element={<CartRoute/>} />
       </Routes>
     </BrowserRouter>
   );
