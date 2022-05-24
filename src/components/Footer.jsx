@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import Grid from './Grid'
 
-import logo from '../assets/images/Logo-2.png'
+import logo from '../assets/images/logo.svg'
 
 const footerAboutLinks = [
     {
@@ -102,11 +102,9 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="footer__about">
-                        <p>
-                            <Link to="/">
-                                <img src={logo} className="footer__logo" alt="" />
-                            </Link>
-                        </p>
+                        <Link to="/">
+                            <img src={logo} className="footer__logo" alt="" />
+                        </Link>
                         <p>
                             Hướng đến mục tiêu mang lại niềm vui ăn mặc mới mỗi ngày cho hàng triệu người tiêu dùng Việt. Hãy cùng Triyys hướng đến một cuộc sống năng động, tích cực hơn.
                         </p>
