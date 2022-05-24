@@ -10,7 +10,7 @@ import { addItem } from "../../redux/shopping-cart/cartItemsSlide";
 
 import Button from "../Button";
 
-import numberWithCommas from "../../utils/numberWithCommas";
+import { formattingNumber } from "../../utils";
 
 const ProductCard = (props) => {
   const dispatch = useDispatch();
@@ -38,9 +38,9 @@ const ProductCard = (props) => {
         </div>
         <h3 className="product-card__name">{props.name}</h3>
         <div className="product-card__price">
-          {numberWithCommas(props.discountedPrice)}
+          {formattingNumber(props.discountedPrice)}
           <span className="product-card__price__old">
-            <del>{numberWithCommas(props.price)}</del>
+            <del>{formattingNumber(props.price)}</del>
           </span>
         </div>
       </Link>

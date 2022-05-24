@@ -5,8 +5,8 @@ import Helmet from "../components/Helmet";
 import CartItem from "../components/CartItem";
 import Button from "../components/Button";
 
-import numberWithCommas from "../utils/numberWithCommas";
 import DialogCart from "../components/DialogCart";
+import { formattingNumber } from "../utils";
 
 const Cart = () => {
     const { value, totalItems, totalPrice } = useSelector((state) => state.cartItems);
@@ -28,7 +28,7 @@ const Cart = () => {
                         <p>Bạn đang có {totalItems} sản phẩm trong giỏ hàng</p>
                         <div className="cart__info__txt__price">
                             <span>Thành tiền:</span>{" "}
-                            <span>{numberWithCommas(Number(totalPrice))}</span>
+                            <span>{formattingNumber(Number(totalPrice))}</span>
                         </div>
                     </div>
                     <div className="cart__info__btn">

@@ -8,8 +8,8 @@ import {
   addItem,
 } from "../redux/shopping-cart/cartItemsSlide";
 
-import numberWithCommas from "../utils/numberWithCommas";
 import { Link } from "react-router-dom";
+import { formattingNumber } from "../utils";
 
 const CartItem = (props) => {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const CartItem = (props) => {
           <Link to={`/catalog/${item.slug}`}>{`${item.name}`}</Link>
         </div>
         <div className="cart__item__info__price">
-          {numberWithCommas(item.discountedPrice)}
+          {formattingNumber(item.discountedPrice)}
         </div>
         <div className="cart__item__info__quantity">
           <div className="product__info__item__quantity">
