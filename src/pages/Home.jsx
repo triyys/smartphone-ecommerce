@@ -6,7 +6,7 @@ import HeroSlider from "../components/HeroSlider";
 import Section, { SectionTitle, SectionBody } from "../components/Section";
 import PolicyCard from "../components/PolicyCard";
 import Grid from "../components/Grid";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/Product/ProductCard";
 import heroSliderData from "../assets/fake-data/hero-slider";
 import banner from "../assets/images/banner.jpg";
 

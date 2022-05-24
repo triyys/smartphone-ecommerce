@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import Grid from './Grid'
-import ProductCard from './ProductCard'
+import ProductCard from './Product/ProductCard'
 
 const InfinityList = props => {
 
@@ -25,7 +25,6 @@ const InfinityList = props => {
         const handleScroll = () => {
             if (listRef && listRef.current) {
                 if (window.scrollY + window.innerHeight >= listRef.current.clientHeight + listRef.current.offsetTop + 200) {
-                    console.log("bottom reach")
                     setLoad(true)
                 }
             }

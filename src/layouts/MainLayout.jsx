@@ -1,6 +1,6 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import ProductViewModal from '../components/ProductViewModal'
+// import ProductViewModal from '../components/Product/ProductViewModal'
 
 const MainLayout = ({ children }) => {
     return (

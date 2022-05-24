@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import Helmet from "../components/Helmet";
 import Section, { SectionBody, SectionTitle } from "../components/Section";
 import Grid from "../components/Grid";
-import ProductCard from "../components/ProductCard";
-import ProductView from "../components/ProductView";
+import ProductCard from "../components/Product/ProductCard";
+import ProductView from "../components/Product/ProductView";
 
 //import productData from '../assets/fake-data/products'
 import ProductController from "../server/controllers/ProductController";

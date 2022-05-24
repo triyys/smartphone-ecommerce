@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // import { set } from "../redux/product-modal/productModalSlice";
-import { addItem } from "../redux/shopping-cart/cartItemsSlide";
+import { addItem } from "../../redux/shopping-cart/cartItemsSlide";
 
-import Button from "./Button";
+import Button from "../Button";
 
-import numberWithCommas from "../utils/numberWithCommas";
+import numberWithCommas from "../../utils/numberWithCommas";
 
 const ProductCard = (props) => {
   const dispatch = useDispatch();
