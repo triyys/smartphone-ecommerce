@@ -3,7 +3,6 @@ import React, { useCallback, useState, useEffect, useRef } from "react";
 import Helmet from "../components/Helmet";
 import CheckBox from "../components/CheckBox";
 
-import productData from "../assets/fake-data/products";
 import brand from "../assets/fake-data/brand";
 import priceSegment from "../assets/fake-data/priceSegment";
 import category from "../assets/fake-data/category";

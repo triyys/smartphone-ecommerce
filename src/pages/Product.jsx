@@ -6,7 +6,6 @@ import Grid from "../components/Grid";
 import ProductCard from "../components/Product/ProductCard";
 import ProductView from "../components/Product/ProductView";
 
-//import productData from '../assets/fake-data/products'
 import ProductController from "../server/controllers/ProductController";
 import { useParams } from "react-router-dom";
 
