@@ -101,7 +101,7 @@ const ProductView = ({ product }) => {
                     <span className="product__info__item__price">
                         {formattingNumber(Number(discountedPrice))}
                     </span>
-                    <span className="product-card__price__old">
+                    <span className="product-card__price product-card__price__old">
                         <del>{formattingNumber(Number(price))}</del>
                     </span>
                 </div>

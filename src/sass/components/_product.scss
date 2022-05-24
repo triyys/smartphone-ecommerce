@@ -28,14 +28,14 @@
 
         &__main {
             flex-grow: 1;
-            padding-top: 100%;
+            padding-top: 50%;
             position: relative;
 
             img {
                 position: absolute;
                 top: 0;
                 left: 50%;
-                height: 50%;
+                height: 100%;
                 transform: translateX(-50%);
             }
         }
