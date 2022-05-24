@@ -2,15 +2,15 @@ import { useState, useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import { addItem } from '../../redux/shopping-cart/cartItemsSlide'
 import { remove } from '../../redux/product-modal/productModalSlice'
 
 import Button from '../Button'
-import numberWithCommas from '../../utils/numberWithCommas'
-import { PRIVATE_ROUTE } from '../../constants/paths'
-import { useNavigate } from 'react-router-dom'
 import TechnicalInfoTable from './TechnicalInfoTable'
+import { PRIVATE_ROUTE } from '../../constants/paths'
+import { categoryDictionary, formattingNumber } from '../../utils'
 
 const ProductView = ({ product }) => {
     const { images, slug, discountedPrice, price, title, description, tech_info, brand, category } = product
@@ -22,8 +22,11 @@ const ProductView = ({ product }) => {
     const [quantity, setQuantity] = useState(1)
 
     useEffect(() => {
-        setPreviewImg(images[0])
         setQuantity(1)
+    }, [])
+
+    useEffect(() => {
+        setPreviewImg(images[0])
     }, [images])
 
     const newItem = useMemo(() => ({
@@ -96,14 +99,23 @@ const ProductView = ({ product }) => {
                 <h1 className="product__info__title">{title}</h1>
                 <div className="product__info__item">
                     <span className="product__info__item__price">
-                        {numberWithCommas(Number(discountedPrice))}
+                        {formattingNumber(Number(discountedPrice))}
                     </span>
                     <span className="product-card__price__old">
-                        <del>{numberWithCommas(Number(price))}</del>
+                        <del>{formattingNumber(Number(price))}</del>
                     </span>
                 </div>
                 <h2 className="product__info__item">Hãng: {brand}</h2>
-                <h2 className="product__info__item">{category}</h2>
+                <div className="product__info__item">
+                    {category.map((item, index) => (
+                        <span
+                            key={index}
+                            className="product__info__item__category"
+                        >
+                            {categoryDictionary[item]}
+                        </span>
+                    ))}
+                </div>
 
                 <div className="product__info__item">
                     <div className="product__info__item__title">Số lượng</div>
