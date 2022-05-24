@@ -11,7 +11,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path={PUBLIC_ROUTE.HOME} element={<HomeRoute/>} />
-        <Route path={`${PUBLIC_ROUTE.CATALOG}:slug`} element={<ProductRoute/>} />
+        <Route path={`${PUBLIC_ROUTE.CATALOG}/:slug`} element={<ProductRoute/>} />
         <Route path={PUBLIC_ROUTE.CATALOG} element={<CatalogRoute/>} />
         <Route path={PRIVATE_ROUTE.CART} element={<CartRoute/>} />
       </Routes>
