@@ -1,22 +1,23 @@
 import React, { useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { PUBLIC_ROUTE } from "../constants/paths";
 
 const mainNav = [
   {
     display: "Trang chủ",
-    path: "/",
+    path: PUBLIC_ROUTE.HOME,
   },
   {
     display: "Sản phẩm",
-    path: "/catalog",
+    path: PUBLIC_ROUTE.CATALOG,
   },
   {
     display: "Phụ kiện",
-    path: "/accessories",
+    path: PUBLIC_ROUTE.ACCESSORY,
   },
   {
     display: "Liên hệ",
-    path: "/contact",
+    path: PUBLIC_ROUTE.CONTACT,
   },
 ];
 

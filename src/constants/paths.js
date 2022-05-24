@@ -1,6 +1,8 @@
 export const PUBLIC_ROUTE = {
     HOME: '/',
     CATALOG: '/catalog',
+    ACCESSORY: '/accessory',
+    CONTACT: '/contact',
     LOGIN: '/login',
 }
 
