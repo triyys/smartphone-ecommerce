@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { PUBLIC_ROUTE } from "../constants/paths";
 import Helmet from "../components/Helmet";
-import HeroSlider from "../components/HeroSlider";
+import HeroSlider from "../components/Home/HeroSlider";
 import Section, { SectionTitle, SectionBody } from "../components/Section";
 import PolicyCard from "../components/PolicyCard";
 import Grid from "../components/Grid";
