@@ -13,7 +13,17 @@ import { PRIVATE_ROUTE } from '../../constants/paths'
 import { categoryDictionary, formattingNumber } from '../../utils'
 
 const ProductView = ({ product }) => {
-    const { images, slug, discountedPrice, price, title, description, tech_info, brand, category } = product
+    const {
+        images,
+        slug,
+        discountedPrice,
+        price,
+        title,
+        description,
+        tech_info,
+        brand,
+        category
+    } = product
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
