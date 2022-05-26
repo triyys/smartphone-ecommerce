@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -6,7 +6,7 @@ import FormControl from "@mui/material/FormControl";
 
 export default function PaymentMethod(props) {
   const option = props.step.description;
-  const [value, setValue] = React.useState("Paypal");
+  const [value, setValue] = useState("Paypal");
   const handChange = (e) => {
     setValue(e.target.value);
     props.useMethod(e.target.value);

@@ -1,4 +1,3 @@
-import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { useDispatch } from "react-redux";

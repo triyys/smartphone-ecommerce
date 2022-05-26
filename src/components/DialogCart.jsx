@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import axios from "axios";
 import Button1 from "./Button";
 import Button from "@mui/material/Button";
@@ -38,11 +38,11 @@ const steps = [
   },
 ];
 export default function DialogCart(props) {
-  const [open, setOpen] = React.useState(false);
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [method, useMethod] = React.useState("Paypal");
-  const [success, setSuccess] = React.useState(false);
-  const [momo, setMomo] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [method, useMethod] = useState("Paypal");
+  const [success, setSuccess] = useState(false);
+  const [momo, setMomo] = useState("");
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
