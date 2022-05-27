@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import productModalSlice from "../product-modal/productModalSlice";
-import cartItemsSlide from "../shopping-cart/cartItemsSlide";
+import cartItemsSlice from "../shopping-cart/cartItemsSlice";
 import authSlice from "../auth/authSlice";
 
 const rootReducer = combineReducers({
     productModalSlice,
-    cartItemsSlide,
+    cartItemsSlice,
     authSlice,
 })
 

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { addItem } from '../../redux/shopping-cart/cartItemsSlide'
+import { addItem } from '../../redux/shopping-cart/cartItemsSlice'
 import { remove } from '../../redux/product-modal/productModalSlice'
 
 import Button from '../Button'

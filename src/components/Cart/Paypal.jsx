@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { removeAllItems } from "../redux/shopping-cart/cartItemsSlide";
+import { removeAllItems } from "../../redux/shopping-cart/cartItemsSlice";
 export default function Paypal(props) {
   const PaypaylButton = window.paypal.Buttons.driver("react", {
     React,

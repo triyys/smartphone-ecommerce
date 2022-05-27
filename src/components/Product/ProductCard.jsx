@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 // import { set } from "../redux/product-modal/productModalSlice";
-import { addItem } from "../../redux/shopping-cart/cartItemsSlide";
+import { addItem } from "../../redux/shopping-cart/cartItemsSlice";
 
 import Button from "../Button";
 

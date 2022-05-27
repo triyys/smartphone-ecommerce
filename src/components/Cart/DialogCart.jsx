@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Button1 from "./Button";
+import Button1 from "../Button";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -18,7 +18,7 @@ import Typography from "@mui/material/Typography";
 import PaymentMethod from "./PaymentMethod";
 import ContactInfo from "./Info";
 import Paypal from "./Paypal";
-import { requestBody, headers } from "../services/Momo";
+import { requestBody, headers } from "../../services/Momo";
 const steps = [
   {
     label: "Chọn phương thức thanh toán",

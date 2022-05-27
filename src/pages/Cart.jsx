@@ -2,23 +2,14 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import Helmet from "../components/Helmet";
-import CartItem from "../components/CartItem";
+import CartItem from "../components/Cart/CartItem";
 import Button from "../components/Button";
 
-import DialogCart from "../components/DialogCart";
+import DialogCart from "../components/Cart/DialogCart";
 import { formattingNumber } from "../utils";
 
 const Cart = () => {
-    const { value, totalItems, totalPrice } = useSelector((state) => state.cartItems);
-    // useEffect(() => {
-    //   if (
-    //     props.location.search.includes("resultCode=0") ||
-    //     props.location.search.includes("resultCode=0")
-    //   ) {
-    //     dispatch(removeItem());
-    //     navigate.push("/");
-    //   }
-    // }, []);
+    const { value, totalItems, totalPrice } = useSelector((state) => state.cartItemsSlide);
 
     return (
         <Helmet title="Giỏ hàng">
