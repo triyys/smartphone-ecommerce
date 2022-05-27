@@ -1,22 +1,30 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-import Helmet from "../components/Helmet";
-import CartItem from "../components/Cart/CartItem";
-import Button from "../components/Button";
+import Helmet from '../components/Helmet'
+import Button from '../components/Button'
+import { DialogCart, CartItem } from '../components/Cart'
+import { formattingNumber } from '../utils'
+import { useMemo } from 'react'
 
-import DialogCart from "../components/Cart/DialogCart";
-import { formattingNumber } from "../utils";
+export default function Cart() {
+    const { cartItems } = useSelector((state) => state.cartItemsSlice)
 
-const Cart = () => {
-    const { value, totalItems, totalPrice } = useSelector((state) => state.cartItemsSlide);
+    const totalItemQuantity = useMemo(() => (cartItems.reduce(
+        (total, item) => (total + item.quantity),
+        0
+    )), [cartItems])
+    const totalPrice = useMemo(() => (cartItems.reduce(
+        (total, item) => (total + item.discountedPrice * item.quantity),
+        0
+    )), [cartItems])
 
     return (
         <Helmet title="Giỏ hàng">
             <div className="cart">
                 <div className="cart__info">
                     <div className="cart__info__txt">
-                        <p>Bạn đang có {totalItems} sản phẩm trong giỏ hàng</p>
+                        <p>Bạn đang có {totalItemQuantity} sản phẩm trong giỏ hàng</p>
                         <div className="cart__info__txt__price">
                             <span>Thành tiền:</span>{" "}
                             <span>{formattingNumber(Number(totalPrice))}</span>
@@ -30,13 +38,11 @@ const Cart = () => {
                     </div>
                 </div>
                 <div className="cart__list">
-                    {value.map((item, index) => (
-                        <CartItem item={item} key={index} />
+                    {cartItems.map((cartItem, index) => (
+                        <CartItem item={cartItem} key={index} />
                     ))}
                 </div>
             </div>
         </Helmet>
-    );
+    )
 }
-
-export default Cart;
