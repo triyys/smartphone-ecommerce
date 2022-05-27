@@ -6,7 +6,7 @@ const initialState = {
   totalItems: 0,
 };
 
-export const cartItemsSlice = createSlice({
+const cartItemsSlice = createSlice({
   name: "cartItems",
   initialState,
   reducers: {
@@ -69,7 +69,11 @@ export const cartItemsSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem, removeItem, decreaseItem, removeAllItems } =
-  cartItemsSlice.actions;
+export const {
+  addItem,
+  removeItem,
+  decreaseItem,
+  removeAllItems
+} = cartItemsSlice.actions;
 
 export default cartItemsSlice.reducer;

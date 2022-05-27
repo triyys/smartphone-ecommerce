@@ -4,7 +4,7 @@ const initialState = {
     value: null,
 }
 
-export const productModalSlice = createSlice({
+const productModalSlice = createSlice({
     name: 'productModal',
     initialState,
     reducers: {
