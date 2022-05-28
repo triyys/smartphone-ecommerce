@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import Button from '../Button'
+import CustomButton from '../CustomButton'
 
 const HeroSlider = props => {
 
@@ -82,13 +82,13 @@ const HeroSliderItem = props => (
             </div>
             <div className="hero-slider__item__info__btn">
                 <Link to={props.item.path}>
-                    <Button
+                    <CustomButton
                         backgroundColor={props.item.color}
                         icon="bx bx-cart"
                         animate={true}
                     >
                         xem chi tiết
-                    </Button>
+                    </CustomButton>
                 </Link>
             </div>
         </div>

@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 // import { set } from "../redux/product-modal/productModalSlice";
 import { addItem } from "../../redux/shopping-cart/cartItemsSlice";
 
-import Button from "../Button";
+import CustomButton from "../CustomButton";
 
 import { formattingNumber } from "../../utils";
 
@@ -45,14 +45,14 @@ const ProductCard = (props) => {
         </div>
       </Link>
       <div className="product-card__btn">
-        <Button
+        <CustomButton
           size="sm"
           icon="bx bx-cart"
           animate={true}
           onClick={handleAddtoCart}
         >
           chọn mua
-        </Button>
+        </CustomButton>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import CheckBox from "../components/CheckBox";
 import brand from "../assets/fake-data/brand";
 import priceSegment from "../assets/fake-data/priceSegment";
 import category from "../assets/fake-data/category";
-import Button from "../components/Button";
+import CustomButton from "../components/CustomButton";
 import InfinityList from "../components/InfinityList";
 import ProductController from "../server/controllers/ProductController";
 
@@ -180,16 +180,16 @@ const Catalog = () => {
 
           <div className="catalog__filter__widget">
             <div className="catalog__filter__widget__content">
-              <Button size="sm" onClick={clearFilter}>
+              <CustomButton size="sm" onClick={clearFilter}>
                 xóa bộ lọc
-              </Button>
+              </CustomButton>
             </div>
           </div>
         </div>
         <div className="catalog__filter__toggle">
-          <Button size="sm" onClick={() => showHideFilter()}>
+          <CustomButton size="sm" onClick={() => showHideFilter()}>
             bộ lọc
-          </Button>
+          </CustomButton>
         </div>
         <div className="catalog__content">
           <InfinityList data={products} />

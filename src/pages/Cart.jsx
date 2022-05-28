@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import Helmet from '../components/Helmet'
-import Button from '../components/Button'
+import CustomButton from '../components/CustomButton'
 import { DialogCart, CartItem } from '../components/Cart'
 import { formattingNumber } from '../utils'
 import { useMemo } from 'react'
@@ -33,7 +33,7 @@ export default function Cart() {
                     <div className="cart__info__btn">
                         <DialogCart totalPrice={totalPrice} />
                         <Link to="/catalog">
-                            <Button size="block">Tiếp tục mua hàng</Button>
+                            <CustomButton size="block">Tiếp tục mua hàng</CustomButton>
                         </Link>
                     </div>
                 </div>

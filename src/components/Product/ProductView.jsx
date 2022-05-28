@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { addItem } from '../../redux/shopping-cart/cartItemsSlice'
 import { remove } from '../../redux/product-modal/productModalSlice'
 
-import Button from '../Button'
+import CustomButton from '../CustomButton'
 import TechnicalInfoTable from './TechnicalInfoTable'
 import { PRIVATE_ROUTE } from '../../constants/paths'
 import { categoryDictionary, formattingNumber } from '../../utils'
@@ -94,12 +94,12 @@ const ProductView = ({ product }) => {
                         dangerouslySetInnerHTML={{ __html: description }}
                     ></div>
                     <div className="product-description__toggle">
-                        <Button
+                        <CustomButton
                             size="sm"
                             onClick={() => setIsExpandedDescription(!isExpandedDescription)}
                         >
                             {isExpandedDescription ? "Thu gọn" : "Xem thêm"}
-                        </Button>
+                        </CustomButton>
                     </div>
                     <div className="product-description__title">Thông số kỹ thuật</div>
                     <TechnicalInfoTable tech_info={tech_info}/>
@@ -148,8 +148,8 @@ const ProductView = ({ product }) => {
                     </div>
                 </div>
                 <div className="product__info__item">
-                    <Button onClick={() => addToCart()}>thêm vào giỏ</Button>
-                    <Button onClick={() => goToCart()}>mua ngay</Button>
+                    <CustomButton onClick={() => addToCart()}>thêm vào giỏ</CustomButton>
+                    <CustomButton onClick={() => goToCart()}>mua ngay</CustomButton>
                 </div>
             </div>
             <div
@@ -161,12 +161,12 @@ const ProductView = ({ product }) => {
                     dangerouslySetInnerHTML={{ __html: description }}
                 ></div>
                 <div className="product-description__toggle">
-                    <Button
+                    <CustomButton
                         size="sm"
                         onClick={() => setIsExpandedDescription(!isExpandedDescription)}
                     >
                         {isExpandedDescription ? "Thu gọn" : "Xem thêm"}
-                    </Button>
+                    </CustomButton>
                 </div>
             </div>
         </div>
